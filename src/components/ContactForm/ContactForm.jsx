@@ -20,7 +20,7 @@ export const ContactForm = () => {
     evt.currentTarget.name === 'name' ? setName(value) : setPhone(value);
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = event => { 
     event.preventDefault();
     if (isAdded(name)) {
       return alert(`${name} is already in contacts`);
