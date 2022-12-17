@@ -16,7 +16,7 @@ export const AppBarr = () => {
       display: 'flex',
       flexDirection: 'row',
       ml: 5,  
-      mr: 30
+      mr: 30,
     }}
     >
       <Navigation />

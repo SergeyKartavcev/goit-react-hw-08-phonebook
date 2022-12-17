@@ -12,7 +12,9 @@ const ContactList = () => {
   return (
     <>
        {isLoading&& <Loader/> }
+       
       <Typography
+       height={70}
         variant="h3"
         align="center"
         sx={{
@@ -21,6 +23,7 @@ const ContactList = () => {
           borderRadius: 2,
           p: 2,
           minWidth: 300,
+          bgcolor: 'success.light'
         }}
       >
         Contacts

@@ -1,7 +1,7 @@
-import { ListItem, Typography } from '@mui/material';
+import { ListItem, Typography, Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { deleteContacts } from '../../redux/contacts/operations';
-
+import DeleteIcon from '@mui/icons-material/Delete'
 const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
   return (
@@ -18,9 +18,10 @@ const ContactItem = ({ id, name, number }) => {
       <Typography>
         {name} : {number}
       </Typography>
-      <button type="button" onClick={() => dispatch(deleteContacts(id))}>
-        Delete
-      </button>
+      <Button  color='secondary'  type="button" onClick={() => dispatch(deleteContacts(id))}>
+       <DeleteIcon />
+      </Button>
+
     </ListItem>
   );
 };

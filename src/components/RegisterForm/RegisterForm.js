@@ -58,8 +58,8 @@ export const RegisterForm = ({ type }) => {
     if (!isValidName || !isValidEmail || !isValidPassword) {
       return;
     }
-    if(error){
-      Notiflix.Notify.failure('произошла ошибка')
+    if (error) {
+      Notiflix.Notify.failure('произошла ошибка');
     }
     dispatch(
       registerForm({
@@ -73,19 +73,20 @@ export const RegisterForm = ({ type }) => {
 
   return (
     <>
-    {isLoading&&<Loader/>}
-        <Typography
-    variant="h3"
-    align='center'
-    mt={-20}
-         sx={{
+      {isLoading && <Loader />}
+      <Typography
+        variant="h3"
+        align="center"
+        sx={{
           fontWeight: 'light',
           boxShadow: 1,
           borderRadius: 2,
           p: 2,
           minWidth: 300,
         }}
-    >Registeretion</Typography>
+      >
+        Registeretion
+      </Typography>
       <Box
         component="form"
         noValidate
@@ -106,7 +107,6 @@ export const RegisterForm = ({ type }) => {
           label="Name"
           name="name"
           variant="outlined"
-          color="secondary"
           size="small"
           inputProps={{
             style: { color: theme.palette.secondary.main },
@@ -129,7 +129,6 @@ export const RegisterForm = ({ type }) => {
           label="E-mail"
           name="email"
           variant="outlined"
-          color="secondary"
           size="small"
           inputProps={{
             style: { color: theme.palette.secondary.main },
@@ -151,7 +150,6 @@ export const RegisterForm = ({ type }) => {
           label="Password"
           name="password"
           variant="outlined"
-          color="secondary"
           size="small"
           inputProps={{
             style: { color: theme.palette.secondary.main },
@@ -165,7 +163,7 @@ export const RegisterForm = ({ type }) => {
             helperText: 'Password must contain from 4 to 8 characters',
           })}
         />
-        <Button variant="outlined" type="submit" color="secondary">
+        <Button variant="outlined" type="submit" >
           Submit
         </Button>
       </Box>

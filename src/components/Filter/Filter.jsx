@@ -14,23 +14,27 @@ export default function Filter() {
        <Typography
      variant="h3"
     align='center'
+    height={70}
          sx={{
           fontWeight: 'light',
           boxShadow: 1,
           borderRadius: 2,
           p: 2,
           minWidth: 300,
-          
+          bgcolor: 'success.light'
         }}
-    >Search</Typography>
-    <Box py={2} mx="auto" maxWidth="500px" width="100%">
+    > Search </Typography>
+    <Box 
+    py={2} 
+    mx="auto"
+    maxWidth="500px"
+    max-width="100%">
       <TextField
         type="text"
         label="Find contacts by name:"
         name="filter"
         value={filter}
         variant="outlined"
-        color="secondary"
         size="small"
         id="filter"
         htmlFor="filter"

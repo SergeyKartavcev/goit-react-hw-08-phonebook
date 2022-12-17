@@ -54,6 +54,21 @@ export default function ContactsForm() {
 
   return (
     <>
+      <Typography
+        variant="h3"
+        align="center"
+         height={70}
+        sx={{
+          fontWeight: 'light',
+          boxShadow: 1,
+          borderRadius: 2,
+          p: 2,
+          minWidth: 300,
+          bgcolor: 'success.light'
+        }}
+      >
+        Phone book
+      </Typography>
       {isLoading && <Loader />}
       <Box
         noValidate
@@ -63,22 +78,9 @@ export default function ContactsForm() {
         flexDirection="column"
         gap={2}
         maxWidth="500px"
+      
       >
         <form className={s.form} onSubmit={handleSubmit}>
-          <Typography
-            variant="h3"
-            align="center"
-            sx={{
-              fontWeight: 'light',
-              boxShadow: 1,
-              borderRadius: 2,
-              p: 2,
-              minWidth: 300,
-            }}
-          >
-            Phone book
-          </Typography>
-
           <label className={s.label}>
             Name
             <input
@@ -105,9 +107,9 @@ export default function ContactsForm() {
               onChange={handleChange}
             />
           </label>
-          <button type="submit" className={s.btn} >
-         Add contact
-      </button>
+          <button type="submit" className={s.btn}>
+            Add contact
+          </button>
         </form>
       </Box>
     </>

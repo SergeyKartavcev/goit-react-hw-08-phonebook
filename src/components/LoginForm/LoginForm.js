@@ -6,7 +6,6 @@ import Notiflix from 'notiflix';
 import { selectAuthError, selectIsLoggedIn } from '../../redux/auth/selectors';
 import { Loader } from '../Loader';
 
-
 export const LoginForm = ({ type }) => {
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
@@ -127,7 +126,6 @@ export const LoginForm = ({ type }) => {
         <Button variant="outlined" type="submit" color="primary">
           Submit
         </Button>
-        
       </Box>
     </>
   );
