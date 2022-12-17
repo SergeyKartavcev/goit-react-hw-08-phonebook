@@ -10,7 +10,17 @@ const Home = () => {
     <Box
     textAlign={'center'}
     mt={30}
-    borderRadius={5}>
+    borderRadius={5}
+    sx={{
+      fontWeight: 'light',
+      boxShadow: 1,
+      borderRadius: 2,
+      p: 2,
+      minWidth: 300,
+      bgcolor: 'success.light'
+    }}
+    >
+      
       <Typography
       alignItems={'center'}
         variant="h2"
