@@ -78,6 +78,7 @@ export const RegisterForm = ({ type }) => {
         variant="h3"
         align="center"
         sx={{
+          bgcolor: 'success.light',
           fontWeight: 'light',
           boxShadow: 1,
           borderRadius: 2,

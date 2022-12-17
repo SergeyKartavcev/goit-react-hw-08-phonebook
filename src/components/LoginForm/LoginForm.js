@@ -63,6 +63,7 @@ export const LoginForm = ({ type }) => {
         align="center"
         mt={-10}
         sx={{
+          bgcolor: 'success.light',
           fontWeight: 'light',
           boxShadow: 1,
           borderRadius: 2,
