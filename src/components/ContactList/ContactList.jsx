@@ -1,27 +1,51 @@
-import ContactItem from 'components/ContactItem/ContactItem';
+import ContactItem from '../ContactItem/ContactItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilteredContacts } from 'redux/selectors';
-import { deleteContacts } from 'redux/operations';
+import { selectFilteredContacts, selectIsLoadingContact } from '../../redux/contacts/selectors';
+import { deleteContacts } from '../../redux/contacts/operations';
+import { List, Typography } from '@mui/material';
+import { Loader } from '../Loader';
 
 const ContactList = () => {
   const dispatch = useDispatch();
   const filterContacts = useSelector(selectFilteredContacts);
-  console.log(filterContacts);
-
+  const isLoading = useSelector(selectIsLoadingContact);
   return (
     <>
+       {isLoading&& <Loader/> }
+      <Typography
+        variant="h3"
+        align="center"
+        sx={{
+          fontWeight: 'light',
+          boxShadow: 1,
+          borderRadius: 2,
+          p: 2,
+          minWidth: 300,
+        }}
+      >
+        Contacts
+      </Typography>
       {filterContacts.length > 0 && (
-        <ul>
-          {filterContacts.map(({ id, name, phone }) => (
+        <List
+          sx={{
+            maxWidth: 500,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 1,
+            marginX: 'auto',
+          }}
+        >
+          {filterContacts.map(({ id, name, number }) => (
+         
             <ContactItem
               id={id}
               key={id}
               name={name}
-              phone={phone}
+              number={number}
               onClick={() => dispatch(deleteContacts(id))}
             />
           ))}
-        </ul>
+        </List>
       )}
     </>
   );

@@ -1,25 +1,45 @@
-import { InputFilter, LabelFilter } from './Filter.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFilter } from 'redux/selectors';
-import { changeFilter } from '../../redux/actions';
-const Filter = () => {
-  const dispatch = useDispatch();
-  const filter = useSelector(selectFilter);
-console.log(filter)
+import { useSelector, useDispatch } from 'react-redux';
+import contactsActions from '../../redux/contacts/actions';
+import { selectFilter } from '../../redux/contacts/selectors';
+import { Box, TextField, Typography } from '@mui/material';
 
-  
+
+
+export default function Filter() {
+  const filter = useSelector(selectFilter);
+  const dispatch = useDispatch();
 
   return (
-    <LabelFilter>
-      <InputFilter
+  <>
+       <Typography
+     variant="h3"
+    align='center'
+         sx={{
+          fontWeight: 'light',
+          boxShadow: 1,
+          borderRadius: 2,
+          p: 2,
+          minWidth: 300,
+          
+        }}
+    >Search</Typography>
+    <Box py={2} mx="auto" maxWidth="500px" width="100%">
+      <TextField
         type="text"
-        placeholder="Find contacts by name"
+        label="Find contacts by name:"
+        name="filter"
         value={filter}
+        variant="outlined"
+        color="secondary"
+        size="small"
         id="filter"
-        onChange={e => dispatch(changeFilter(e.target.value))}
+        htmlFor="filter"
+        autoComplete="off"
+        focused
+        onChange={e => dispatch(contactsActions.changeFilter(e.target.value))}
+        fullWidth
       />
-    </LabelFilter>
+    </Box>
+    </>
   );
-};
-
-export default Filter;
+}
