@@ -23,7 +23,7 @@ export const ContactForm = () => {
   const handleSubmit = event => { 
     event.preventDefault();
     if (isAdded(name)) {
-      return alert(`${name} is already in contacts`);
+      return alert(`${name} is already in contacts !!!`);
     } else {
       dispatch(addContact(name, phone));
     }
